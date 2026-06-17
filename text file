@@ -1,0 +1,92 @@
+DAY-1 Programming fundamentals answers:
+
+1.A variable is a named memory location used to store data.
+2.Variables are used to store and manipulate data in programs
+3.A variable name identifies the storage location,while its value is the data stored in it.
+4.Valid variable name: b.total marks
+5.C++ is case sensitive,so Age and age are different variables.
+6 .No.Variable names cannot contain spaces because the compiler treats spaces as seperators.
+7.Yes,a variable name can start with a underscore(_).
+8.It causes an error because two variables cannot have the same name in the same scope.
+9 .Examples:studentName,studentAge,studentMarks.
+10.studentMarks is better because it is more meaningful and readable.
+11.A data type specifies the kind of data a variable can store.
+12. int.
+13.float or double
+14.double has greater precision and stores more decimal digits than float.
+15.char
+16.bool
+17.string
+18.Output:18
+19.25->int,3.14->double,'a'->char,true->bool
+20.The decimal part is truncated.
+21.cin is used to fake input from the user.
+22.cout is used to display output.
+23.>>
+24.<<
+25.cin>>age; takes input from the user and stores it in age.
+26.cout<<age;displays the value of age.
+27 .endl moves the cursor to the next line.
+28.cin>>marks;
+29.cout<<"welcome to C++";
+30.output:programming
+31.An operator is a symbol that performs a specific operation on one or more operands.
+32.+
+33.10%3=1
+34.8%2=0
+35.==
+36.=assigns a value to a variable,while == compares two values for equality.
+37.true
+38&& represents logical AND.
+39.|| represents logical OR.
+40.! represents logical NOT.
+41.program to print hello world:
+#include <iostream>
+using namespace std;
+int main() {
+    cout << "Hello, World!" << endl;
+    return 0;
+}
+42.program to input two numbers and display their sum:
+#include <iostream>
+using namespace std;
+int main() {
+    int num1, num2, sum;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    sum = num1 + num2;
+    cout << "The sum is: " << sum << endl;
+    return 0;
+}
+43.program to calculate the area of a rectangle:
+#include <iostream>
+using namespace std;
+int main() {
+    double length, width, area;
+    cout << "Enter the length and width of the rectangle: ";
+    cin >> length >> width;
+    area = length * width;
+    cout << "The area of the rectangle is: " << area << endl;
+    return 0;
+}
+44.Simple interest formula:SI+(P*R*T)/100
+45.Program to calculate simple interest:
+#include <iostream>
+using namespace std;
+int main() {
+    double principal, rate, time, simpleInterest;
+    cout << "Enter principal amount: ";
+    cin >> principal;
+    cout << "Enter rate of interest: ";
+    cin >> rate;
+    cout << "Enter time in years: ";
+    cin >> time;
+    simpleInterest = (principal * rate * time) / 100;
+    cout << "The simple interest is: " << simpleInterest << endl;
+    return 0;
+}
+46.A temporary variable is a variable used to prevent data loss while swapping.
+47.After swapping:a=20,b=10
+48.Formula F=(C*9/5)+32
+49.0°C=32°F
+50.Integer division can give incorrect results because 9/5 becomes 1 instead of  1.8 
