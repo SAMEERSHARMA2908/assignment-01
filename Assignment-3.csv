@@ -1,0 +1,218 @@
+                  Question Number,                        Error,                  Line Number,                      Error Type,Error correction
+1, ; missing           ,8, Syntax Error,                        int x;
+1,assignment operator used with if,13,Syntax Error,                   if(x==10)
+1,   can't define a string with int,18,  Semantic Error,                   int marks=90;
+1, variable z is undefined,20, Semantic Error,"         prinntf(""%d\n"",marks);"
+1,variable should always  be on left,22,  Syntax Error,                  x=100;
+1,Array index out of bounds,26,   Logical error,                 arr[4]=50;
+1,taking address of int in float pointer,28,   Semantic Error,                  int *ptr=&x;
+1,%f used for integer variable,30,  Semantic Error,"                printf(""%d\n"",x);"
+1, Division by zero a/b where b=0,35,  Logical Error,                   b!=0
+1,multiple characters in char ,37,  Syntax Error,                  char ch='A';
+1,Same message in both else and if,                                                                                         40-43 , Logical Error,Else should print another message
+1,missing use of<math.h> to calculate,45, Logical Error,    double r=sqrt(25);
+1,Function show() not defined,47, Semantic Error,             Define show()
+1,"while(x<15); ,; is not required",49,Logical error,                      while(x<15)
+1,continue; used outside loop,54,  Syntax Error,                  Place inside loop
+1,break; used outside loop,56,  Syntax Error,                   place inside loop
+1, calculate(10) argument passed,58,Functional Argument Error,"                  calculate(10,20)"
+2,; missing,9,Syntax Error,                     int num2=20;
+2,) missing,21,Syntax Error,                     if(choice==1)
+2,) missing,50,Syntax Error,              for(int i=0;i<5;i++)
+2,) extra,33,Syntax Error,                   if(choice==3)
+2,) missing,53,Syntax Error,                while(choice>0)
+2,; missing after while(choice>5),66,Syntax Error,                   while(choice>5);
+2,missing : after case 2,96,Syntax Error,                   case 2:
+2, missing in char grade,100,Syntax Error,                     char grade='A';
+2,missing ] in int arr[5;,126,Syntax Error,                          int arr[5];
+2,missing } for extra block,133,Syntax Error,"Add } before printf(""end of program"");"
+2, } missing after printf,135,Syntax Error,"         printf(""end of program/n"");"
+3,String assigned to int,8,Type mismatch,                 int age=20;
+3,"double quotes in char grade=""A"";",14,Syntax Error,                char grade='A';
+3,%d used for float,16,Format Specifier Error,"              printf(""%f\n"",salary);"
+3,%f used for integer variable,18,Format Specifier Error,"             printf(""%d\n"",marks);"
+3,score variable is not declared,22,Semantic Error,              Declarescore before use
+3,constant on the left side,25,Assignment Error,                   x=100;
+3,%s used for int,27,Format Specifier Error,"                printf(""%d\n"",num);"
+3,%d used for float,31,Format Specifier Error,"                 printf(""%f"",pi);"
+3,Array index must be integer,35,Syntax Error,                arr[2]=100;
+3,float assigned to char,39,Type mismatch,               char ch='6';
+3,argument missing in add(10),41,Function Call Error,"             result=add(10,20);"
+3,"argument missing in average(10,20)",45,Function Call Error,"              avg=average(10,20,30);"
+3,String assigned to int,52,Type mismatch,                    int temprature=35;
+3,String assigned to float,56,Type mismatch,                    float discount=10.5;
+3,"name=""'Robil"";",60,Assignment Error,"                strcpy(name,""Robil);"
+3,count=totalMarks+10;,67,Semantic Error,                    Declare totalMarks
+3,Integer printed as character,72,Logical error,"                 printf(""%d\n"",number);"
+3,%d used for float,81,Format Specifier Error,"               printf(""%f\n"",rate);"
+3,"sum=add(a,b,c);",89,Function Call Error,"                      sum=add(a,b);"
+3,Float result stored in int,99,Type mismatch,                   float area;
+3,Assignment operator in if ,106,Logical error,               if(studentMarks==100)
+3,"int size=""large"";",111,Type mismatch,                      use integer value
+3,"printf(""%d\n,percentage);",119,Format Specifier Error,"                 printf(""%f\n,percentage);"
+3,"arr2[""five""]=100;",128,Array Index Error,                arr2[5]=100;
+3,"case""2"":",136,Switch Case Error,                   case 2:
+3,"finalResult=multiply(10,20);",146,Syntax Error,                 define multiply()
+3,"printf(""%d\n,areaRect);",154,Format Specifier Error,"           printf(""%f\n"",areaRect);"
+3,avgMarks=average(…);,160,Type mismatch,                   float avgMarks;
+3,"printf(""%d\n"",value);",162,Semantic Error,                    declare value
+3,"int employeeId=""EMP101"";",164,Type mismatch,"             char employeeId[]=""EMP101;"
+3,"printf(""%d\n"",employeeId);",165,Format Specifier Error,"             printf(""%s\n"",employeeId);"
+4,calculateSalary(50000);,24,Function Declared but Not Defined,Define calculatesalary() function
+4,printStudentDetails();,26,Function Declared but Not Defined,Define printstudentdetails() function
+4,showResult();,34,Function Declared but Not Defined,Define showResult()
+4,"calculateAverage(70,8,0,90);",36,Function Declared but Not Defined,Define calculateAverage();
+4,companyProfit used in printf,40,Undefined global variable,define float companyProfit;
+4,generateReport();,42,Function Declared but Not Defined,Add prototype and function
+4,displayEmployee();,44,Function Declared but Not Defined,Add prototype and function
+4,processData();,46,Function Declared but Not Defined,Add prototype and function
+4,saveRecord();,48,Function Declared but Not Defined,Add prototype and function
+4,loadRecord();,50,Function Declared but Not Defined,Add prototype and function
+4,printInvoice();,52,Function Declared but Not Defined,Add prototype and function
+4,calculateTax();,54,Function Declared but Not Defined,Add prototype and function
+4,validiateUser();,56,Function Declared but Not Defined,Add prototype and function
+4,sendNotifications();,58,Function Declared but Not Defined,Add prototype and function
+4,generateCertificate();,60,Function Declared but Not Defined,Add prototype and function
+5,a/b where b=0;,11,Logical error,Ensure b!=0 before division
+5,*ptr1=50;,15,Semantic Error,Allocate memory or point 
+5,arr[10]=100;,19,Array out of Bounds,Use index 0-4 only
+5,*ptr2=200;,23,Syntax Error,initialize pointer before use
+5,"strcpy(name,""Programming"");",27,Semantic Error,increase array size or shorten string
+5,);,33,Logical error,initialize ptr3
+5,"fscanf(fp,""%d"",&a);",39,Syntax Error,check fp!=NULL before use
+5,"strcpy(ptr4,""Computer Science"");",45,Logical error,Allocate memory 
+5,"printf(""%c\n"",ptr4[0]);after free",51,Logical error,Do not access freed memory
+5,free(ptr5); free(ptr5);,57,Semantic Error,free memory only once
+5,x%y where y=0,63,Semantic Error,check y!=0
+5,"strcat(str1,""WorldProgramming"");",69,Syntax Error,increase array size 
+5,wrong Allocation in loop,77,Semantic Error,Allocate 10 elements or reduce loop
+5,matrix[5][5]=100;,83,Syntax Error,use indices 0-2
+5,ptr6[0] when ptr6=NULL,87,Semantic Error,Allocate memory first
+5,gets(password);,91,Syntax Error,use fgets()
+5,*ptr7=1000; after free(ptr7),99,Syntax Error,Do not access freed memory
+5,"printf(""Age=%d\n"",age);",103,Semantic Error,initialize age
+5,arr[-1]=50;,107,Invalid array index,use valid index
+5,if(*ptr8>0),111,Semantic Error,initialize pointer before use
+5,hugrarray[0]=1;,119,Syntax Error,Check malloc result
+5,Infinite while(1) loop,129,Logical error,Add termination condition
+6,"if(num%2==1) prints ""Even""",13,Logical error,if(num%2==0)
+6,"printf(""Number is Odd\n""); in else",15,Logical error,Keeop Odd in else after condition
+6,marks>=90 prints Grade B,22,Logical error,"printf(""Grade A\n"");"
+6,marks>=80 prints GradeA,24,Logical error,"printf( Grade B\n"");"
+6,Leap year check incomplete,26,Logical error,"check %4,%100 and %400 conditions"
+6,age>18 prints not eligible,36,Logical error,"if(age>=18) printf(""eligible"");"
+6,Else prints eligible,46,Logical error,else should print not eligible
+6,a>b prints smaller number as a,57,Logical error,print larger number or change message
+6,a<b prints smaller number as b,59,Logical error,should print a as smaller
+6,if(y<largest),68,Logical error,if(y>largest)
+6,if(z<largest),71,Logical error,if(z>largest)
+6,Integer division in average calculation,81,Logical error,avg=(float)totalMarks/subjects;
+6,Circle area formula uses 2*3.14*r²,91,Logical error,area=3.14*radius²
+6,Month 1 prints february,102,Logical error,print January
+6,Month 2 prints March,112,Logical error,print February
+6,Month 3 prints April,136,Logical error,print March
+6,Month 4 prints May,144,Logical error,print April
+6,isPrime=1; when factor found,156,Logical error,isPrime=0;
+6,if prime prints not prime,160,Logical error,print prime
+6,discount fixed as 5,171,Logical error,calculate actual discount amount
+6,purchaseAmount+ discount,181,Logical error,purchaseAmount-discount
+6,sum=1;,192,Logical error,sum+=i;
+6,Temp has than 40 prints cold weather,203,Logical error,use suitable temprature range
+6,Grade A prints Average Performance,211,Logical error,print excellent performance
+6,Rectangle area=length+width,213,Logical error,rectanglearea=length*width;
+6,percentage>=60 prints fail,214,Logical error,print pass
+6,Else prints pass,214,Logical error,else should print not pass
+7,i<=5 accesses marks[5],9,Logical error,i<5
+7,average=total/5;,25,Logical error,average=(float)total/5;
+7,i<=10 accesses numbers[10],33,Array out of Bounds,i<10
+7,"strcpy(name,""ComputeScience"");",48,Buffer Overflow,increase array size
+7,"city=""delhi"";",56,Array Assignment Error,"strcpy(city,""delhi"");"
+7,if(str1==str2),64,String comparison,"if(strcmp(str1,str2)==0)"
+7,gets(password);,76,Buffer Overflow,"fgets(password,sizeof(password),stdin);"
+7,"strcat(firstname,lastName);",84,Buffer Overflow,increase array size or use strcat()
+7,grade not null terminated,95,String handling,Add grade[2]='\0';
+7,arr[-1],103,Invalid array index,use valid index 0-4
+7,"scanf(""%s"",department);",111,Buffer Overflow,limit input length(%9s)
+7,scores[3]=60;,125,Array out of Bounds,Array size should be 4 
+7,"printf(""%d\n"",scores[3]);",127,Array out of Bounds,Access valid index
+7,"char subject[10]=""programming"";",131,Buffer Overflow,increase array size
+7,"if(username==""admin"")",141,String comparison,"strcmp(username,""admin"")==0"
+7,"strcpy(mobile,""987654321012"");",153,Buffer Overflow,increase array size
+7,i<=5 accesses attendance[5],163,Array out of Bounds,i<5
+7,course[20],173,Array out of Bounds,use valid index 0-19
+7,college not null terminated,186,String handling,Add college[5]='\0';
+7,"char section[3]=""IT-A"";",204,Syntax Error,"char section[5]=""IT-A"";"
+8,result=add(num1);,15,Function Assignment Error,"result=add(num1,num2);"
+8,"avg=average(70,80);",21,Function Argument Error,"avg=average(70,80,90);"
+8,calculateGrade(marks);,61,Function not declared,declare and define calculateGrade()
+8,area=circleArea(5);,67,Function not declared,declare and define calculateArea()
+8,total=sumArray();,73,Function not declared,declare tnd define sumArray()
+8,displayResult();,79,Function not declared,declare and define displayResult()
+8,if(n==0) return 0; in factorial,96,Logical error,factorial of 0 should return 1
+8,maximum(),115,Logical error,"return a if a>b,else b"
+8,return fibonacci(n)+fibonacci(n-1);,128,infinite recursion,return fibonacci(n-1)+fibonacci(n-2);
+8,return (a+b+c)/3;,140,Type conversion,return (a+b+c)/3.0;
+8,return marks/total*100;,150,Integer division,return(marks*100.0)/total;
+8,return; in SI,160,Return type error,return si;
+8,for(int i=1;i<exp;i++),176,Logical error,i<=exp
+8,reverseNumber()has no return ,194,Logical error,return rev;
+8,isPrime() returns 1 when divisible,217,Logical error,return 0 when divisible
+8,return o; for prime number,220,Logical error,return 1 for prime
+8,for(int i=1;i<size;i++),244,Array out of Bounds,i<size
+8,recursiveDemo(n+1);,251,infinite recursion,Add stopping condition
+8,return length+width;,262,Logical error,return length*width;
+8,return n*n; in cube,272,Logical error,return n*n*n;
+9,"printf(""%d\n"",*ptr1);",13,Semantic Error,intialize ptr1
+9,*ptr2=100;,17,Null pointer dereference,Allocate memory or point 
+9,"ptr3++; printf(""%d\n'',*ptr3);",27,invalid pointer access,do not increment beyond memory
+9,*(ptr4+10),33,Array out of Bounds,use indices with range(0-4)
+9,"printf(""%d\n"",*ptr5);",45,use after free,Do not access freed memory
+9,ptr6=NULL;,51,memory leak,free(ptr6); ptr6=NULL;
+9,Allocated 5 bytes but storing 10 int,57,Buffer Overflow,Allocate enough memory
+9,ptr8[3]=40;,71,Array out of Bounds,"valid indices are 0,1,2"
+9,free(ptr9); free(ptr9);,83,Double free error,free memory only once
+9,"printf(""%d\n"",*ptr10);",89,uninitialized memory,Assign a value
+9,for(i=0;i<=5;i++),95,Array out of Bounds,use i<5
+9,pptr=&value;,111,Type mismatch,usean int *ptr=&value; pptr=&ptr;
+9,"strcpy(name,""Programming"");",119,Buffer Overflow,Allocate enough memory
+9,"ptr11++; printf(""%d\n"",*ptr11);",129,invalid pointer access,do not increment beyond memory
+9,if(*ptr12>0),135,Null pointer dereference,check pointer before dereferencing
+9,ptr13[100]=500;,147,Array out of Bounds,last valid index is 99
+9,*ptr14=999;,155,use after free,do not use freed memory
+9,p=matrix;,163,incompatible pointer assignment,p=&matrix[0][0];
+9,*(p+20),165,Array out of Bounds,access within matrix size
+9,ptr15=malloc(sizeof(int)); twice,171,memory leak,use only one
+9,swap() swaps pointers not values,183,Logical error,use int temp=*a; *a=*b;
+9,for(i=0;i<=size;i++) in printArray(),191,Array out of Bounds,use i<size
+10,int choice=1,12,Syntax Error,int choice=1;
+10,"int marks=""90"";",14,Type mismatch,int marks=90;
+10,result=add(a);,20,Function Argument Error,"result=add(a,b);"
+10,if(a=b),24,Assignment Error,if(a==b)
+10,score not declared,29,undeclared variable,declare score
+10,arr[10]=100;,33,Array out of Bounds,use valid index(0-4)
+10,arr[-1],35,Invalid array index,use valid index
+10,"strcpy(name,""ProgrammingLanguage"");",39,Buffer Overflow,increase array size
+10,"city=""delhi"";",44,Array Assignment Error,"strcmp(city,""delhi);"
+10,"if(user==""admin)",51,String comparison,"strcmp(user,""admin"");"
+10,x/y where y=0,59,divide by zero,check y!=0
+10,*ptr1=500;,63,Null pointer dereference,Allocate memory first
+10,"printf(""%d\n"",*ptr2);",67,uninitialized memory,initialize pointer before use
+10,Accessing *ptr3 after free(ptr3),77,use after free,Do not access freed memory
+10,free(ptr3) again,79,Double free error,free memory only once
+10,writing 10 elements to 5 byte allocation,87,Buffer Overflow,Allocate sufficient memory
+10,ptr5=malloc(…) twice,93,memory leak,free first allocation
+10,"average(70,80)",97,Function Argument Error,pass 3 arguments
+10,isPrime=1; when factor found,117,Logical error,isPrime=0;
+10,Prime number prints not prime,124,Logical error,"print ""prime"""
+10,non-prime prints prime,126,Logical error,"print""not Prime"""
+10,displayReport(); not defined,130,undefined function,define function
+10,calculatesalary();,132,Function not declared,Add prototype and function
+10,fscanf(fp…),140,file handling error,check fp!=NULL before use
+10,case 1 missing:,146,Syntax Error,case 1:
+10,char grade='ab';,157,invalid character constant,use 'A'
+10,scores[3]=40;,166,Array out of Bounds,Array size should be 4 
+10,"for(i=0;i<=3,i++)",171,Array out of Bounds,use i<3
+10,2*3.14*radius²,183,Wrong formula,3.14*radius²
+10,while(choice>0);,187,infinite recursion,remove semicolon
+10,continue; outside loop,192,Syntax Error,remove or place inside loop
+10,return (a+b+c)/3;,202,Integer division,return (a+b+c)/3.0;
