@@ -1,0 +1,834 @@
+GATE EXAM PYQ'S
+
+Q.1 int func(int start, int end){
+    int length = end + 1 - start;
+    if((length < 1) || (start < 0) || (end < 0)){
+        return(0);
+    }
+    if(length % 3 == 0){
+        return(func(start + 1, end));
+    } else if(length % 3 == 1){
+        return(1 + func(start, end - 1));
+    } else {
+        return(func(start + 2, end));
+    }
+}
+What is the maximum possible value that can be returned from this function?(GATE 2026)
+
+
+Q.2 Consider the recursive functions represented by the following code segment:
+int bar(int n) {
+    if (n == 1) return 0;
+    else return 1 + bar(n / 2);
+}
+int foo(int n) {
+    if (n == 1) return 1;
+    else return 1 + foo(bar(n));
+}
+Find the smallest positive integer n for which foo(n) returns 5.(GATE 2026)
+
+Q.3 Consider the following C program. Assume parameters to a function are evaluated from right to left.
+#include <stdio.h>
+int g(int p) {
+    printf("%d", p);
+    return p;
+}
+int h(int q) {
+    printf("%d", q);
+    return q;
+}
+void f(int x, int y) {
+    g(x);
+    h(y);
+}
+int main() {
+    f(g(10), h(20));
+}
+Which one of the following options is the CORRECT output of the C program?(GATE 2024)
+(A) 20101020(B) 10202010(C) 20102010(D) 10201020
+
+Q.4 Consider the following C program:
+#include <stdio.h>
+int f(int n) {
+    static int r = 0;
+    if (n <= 0) return 1;
+    if (n > 3) {
+        r = n;
+        return f(n - 2) + 2;
+    }
+    return f(n - 1) + r;
+}
+int main() {
+    printf("%d", f(5));
+    return 0;
+}
+What is the output printed by the program?(GATE 2023)
+
+Q.5 Consider the C function count(num) below:
+int count(int num) {
+    int c = 0;
+    while (num) {
+        c += num & 1;
+        num >>= 1;
+    }
+    return c;
+}
+For an integer input, what mathematical property does this function compute?(GATE 2022)
+
+Q.6 Consider the following recursive C function:
+void count(int n) {
+    static int d = 1;
+    printf("%d ", n);
+    printf("%d ", d);
+    d++;
+    if (n > 1) count(n - 1);
+    printf("%d ", d);
+}
+int main() {
+    count(3);
+    return 0;
+}
+What is the final sequence printed when executed?(GATE 2021)
+
+Q.7 What is the return value of foo(513, 2) for the function definition below?(GATE 2021)
+int foo(int n, int r) {
+    if (n > 0) return (n % r + foo(n / r, r));
+    else return 0;
+}
+
+Q.8 Consider the following C function:
+int fun(int num) {
+    int i;
+    for (i = 2; i * i <= num; i++) {
+        if (num % i == 0) return 0;
+    }
+    return 1;
+}
+What does fun(num) return if num is a prime number?(GATE 2020)
+
+Q.9 Consider the following C program:
+#include <stdio.h>
+int jumble(int x, int y) {
+    x = 2 * x + y;
+    return x;
+}
+int main() {
+    int x = 2, y = 5;
+    y = jumble(y, x);
+    x = jumble(y, x);
+    printf("%d", x);
+    return 0;
+}
+What is the value printed?(GATE 2019)
+
+Q.10 Consider the following recursive C function:
+int fun(int n) {
+    static int i = 1;
+    if (n >= 5) return n;
+    n = n + i;
+    i++;
+    return fun(n);
+}
+What value does fun(1) return?(GATE 2018)
+
+Q.11What is the output of the following C program?(GATE 2017)
+#include <stdio.h>
+void swap(int *x, int *y) {
+    static int *temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+int main() {
+    int a = 10, b = 20;
+    swap(&a, &b);
+    printf("%d %d", a, b);
+    return 0;
+}
+
+Q.12 Compute the return value of f(3, 5) given:(GATE 2016)
+int f(int x, int y) {
+    if (x <= 0 || y <= 0) return 0;
+    if (x == 1) return y;
+    if (y == 1) return x;
+    return f(x - 1, y) + f(x, y - 1);
+}
+
+Q.13What is the output of the following C program?(GATE 2016)
+#include <stdio.h>
+void f(int *p, int *q) {
+    p = q;
+    *p = 2;
+}
+int main() {
+    int i = 0, j = 1;
+    f(&i, &j);
+    printf("%d %d", i, j);
+    return 0;
+}
+
+Q.14 #include <stdio.h>
+void stringcopy(char *, char *);
+int main(){
+char a[30] = "@#Hello World!";
+stringcopy(a, a + 2);
+printf("%s\n", a);
+return 0;
+}
+void stringcopy(char *s, char *t) {
+while(*t)
+*s++ = *t++;
+}
+Which ONE of the following will be the output of the program?(GATE 2025)
+(A) @#Hello World!
+(B) Hello World!
+(C) ello World!
+(D) Hello World!d!
+
+Q.15 Consider the following C program:(GATE 2025)
+#include <stdio.h>
+int g(int n) {
+ return (n+10);
+}
+int f(int n) {
+ return g(n*2);
+}
+int main() {
+ int sum, n;
+ sum=0;
+ for (n=1; n<3; n++)
+ sum += g(f(n));
+ printf ("%d", sum);
+ return 0;
+}
+The output of the given C program is ________. (Answer in integer)
+
+Q.16 The pseudocode of a function fun() is given below:(GATE 2025)
+fun(int A[0,…,n-1]){
+ for i=0 to n-2
+ for j=0 to n-i-2
+ if (A[j]>A[j+1])
+ then swap A[j] and A[j+1]
+}
+Let 𝐴[0, … ,29] be an array storing 30 distinct integers in descending order. The
+number of swap operations that will be performed, if the function fun() is called
+with 𝐴[0, … ,29] as argument, is __________. (Answer in integer)
+
+Q.17 #include <stdio.h>
+void foo(int *p, int x){
+ *p=x;
+}
+int main(){
+ int *z;
+ int a = 20, b = 25;
+ z = &a;
+ foo(z,b);
+ printf("%d",a);
+ return 0;
+}
+The output of the given C program is __________. (Answer in integer)(GATE 2025)
+
+Q.18 #include <stdio.h>
+int foo(int S[],int size){
+ if(size == 0) return 0;
+ if(size == 1) return 1;
+ if(S[0] != S[1]) return 1+foo(S+1,size-1);
+ return foo(S+1,size-1);
+}
+int main(){
+ int A[]={0,1,2,2,2,0,0,1,1};
+ printf("%d",foo(A,9));
+ return 0;
+}
+The value printed by the given C program is _______ . (Answer in integer)(GATE 2025)
+
+Q.19 Consider the following C program:
+#include <stdio.h>
+int gate (int n) {
+ int d, t, newnum, turn;
+ newnum = turn = 0; t=1;
+ while (n>=t) t *= 10;
+ t /=10;
+ while (t>0) {
+ d = n/t;
+ n = n%t;
+ t /= 10;
+ if (turn) newnum = 10*newnum + d;
+ turn = (turn + 1) % 2;
+ }
+ return newnum;
+}
+int main () {
+ printf ("%d", gate(14362));
+ return 0;
+}
+The value printed by the given C program is _______ . (Answer in integer)(GATE 2025)
+
+Q.20 Consider the following C program:
+#include <stdio.h>
+void fX();
+int main(){
+ fX();
+ return 0;}
+ void fX(){
+ char a;
+ if((a=getchar()) != ’\n’)
+ fX();
+ if(a != ’\n’)
+ putchar(a);}
+
+Assume that the input to the program from the command line is 1234 followed by
+a newline character. Which one of the following statements is CORRECT?
+(A) The program will not terminate
+(B) The program will terminate with no output
+(C) The program will terminate with 4321 as output
+(D) The program will terminate with 1234 as output
+
+Q.21 Consider the following C function definition.(GATE 2024)
+int f(int x, int y) {
+ for (int i=0; i<y; i++) {
+ x=x+x+y;
+}
+return x;
+}
+Which of the following statements is/are TRUE about the above function?
+(A) If the inputs are x=20, y=10, then the return value is greater than 2
+20
+(B) If the inputs are x=20, y=20, then the return value is greater than 2
+20
+(C) If the inputs are x=20, y=10, then the return value is less than 2
+10
+(D) If the inputs are x=10, y=20, then the return value is greater than 2
+20
+
+Q.22 Consider the following C function definition.(GATE 2024)
+int fX(char *a){
+ char *b = a;
+ while(*b)
+ b++;
+ return b - a;}
+Which of the following statements is/are TRUE?
+(A) The function call fX(”abcd”) will always return a value
+(B) Assuming a character array c is declared as char c[] = ”abcd” in main(),
+the function call fX(c)will always return a value
+(C) The code of the function will not compile
+(D) Assuming a character pointer c is declared as char *c = ”abcd” in main(),
+the function call fX(c)will always return a value
+
+Q.23 What is the output of the following C program?(GATE 2024)
+#include <stdio.h>
+int main() {
+ double a[2]={20.0, 25.0}, *p, *q;
+ p = a;
+ q = p + 1;
+ printf(”%d,%d”, (int)(q – p), (int)(*q – *p));
+ return 0;}
+(A) 4,8
+(B) 1,5
+(C) 8,5
+(D) 1,8
+
+Q.24 The integer value printed by the ANSI-C program given below is .(GATE 2023)
+#include<stdio.h>
+int funcp(){
+static int x = 1;
+x++;
+return x;
+}
+int main(){
+int x,y;
+x = funcp();
+y = funcp()+x;
+printf("%d\n", (x+y));
+return 0;
+}
+
+Q.24 Consider the following program:(GATE 2023)
+int main()
+{
+f1();
+f2(2);
+f3();
+return(0);
+}
+int f1()
+{
+return(1);
+}
+int f2(int X)
+{
+f3();
+if (X==1)
+return f1();
+else
+return (X*f2(X-1));
+}
+int f3()
+{
+return(5);
+}
+Q.25 Which one of the following options represents the activation tree corresponding to
+the main function?(GATE 2023)
+(A)
+main
+f1 f2 f3
+f3 f2
+f3 f1
+(B)
+main
+f2 f3
+f1
+f1
+f3
+(C)
+main
+f2
+f1
+f3 f1
+(D)
+main
+f1 f2 f3
+f3 f2 f1
+
+Q.26 What is printed by the following ANSI C program?(GATE 2022)
+#include<stdio.h>
+int main(int argc, char *argv[])
+{
+ int x = 1, z[2] = {10, 11};
+ int *p = NULL;
+ p = &x;
+ *p = 10;
+ p = &z[1];
+ *(&z[0] + 1) += 3;
+ printf("%d, %d, %d\n", x, z[0], z[1]);
+ return 0;
+}
+(A) 1, 10, 11
+(B) 1, 10, 14
+(C) 10, 14, 11
+(D) 10, 10, 14
+
+Q.27 Consider the following ANSI C program(GATE 2021)
+
+ #include < stdio.h >
+int foo(int x, int y, int q) 
+    {
+        if ((x < = 0) && (y < = 0))
+        return q;
+        if (x < = 0)
+        return foo(x, y-q, q);
+        if (y < = 0)
+        return foo(x-q, y, q);
+        return foo(x, y-q, q) + foo(x-q, y, q);
+    }
+int main( )
+{
+    int r = foo(15, 15, 10);
+    printf("%d", r);
+    return 0;
+}
+The output of the program upon execution is ____
+
+Q.28 Consider the following ANSI C function:(GATE 2021)
+int SomeFunction (int x, int y)
+{
+    if ((x==1) || (y==1)) return 1;
+    if (x==y) return x;
+    if (x > y) return SomeFunction(x-y, y);
+    if (y > x) return SomeFunction (x, y-x);
+ 
+} 
+The value returned by SomeFunction(15, 255) is __________
+
+Q.29 Consider the following ANSI C function:(GATE 2021)
+ int SimpleFunction(int Y[], int n, int x)
+{
+int total = Y[0], loopIndex;
+for (loopIndex=1; loopIndex<=n-1; loopIndex++)
+    total=x*total +Y[loopIndex];
+return total;
+}
+Let Z be an array of 10 elements with Z[i]=1, for all i such that 
+0
+≤
+i
+≤
+9
+0≤i≤9. The value returned by SimpleFunction(Z,10,2) is __________
+
+Q.30 In the following procedure(ISRO 2020)
+ Integer procedure P(X,Y);
+Integer X,Y;
+value x;
+begin
+      K=5;
+      L=8;
+      P=x+y;
+end
+X is called by value and Y is called by name. If the procedure were invoked by the following program fragment
+ K=0;
+L=0;
+Z=P(K,L);
+then the value of Z will be set equal to
+A 5
+B 8
+C 13
+D 0
+
+Q.31 What is the output in a 32 bit machine with 32 bit compiler?(ISRO 2020)
+ #include < stdio.h >
+rer(int **ptr2, int **ptr1)
+{
+    int *ii;
+    ii=*ptr2;
+    *ptr2=*ptr1;
+    *ptr1=ii;
+    **ptr1*=**ptr2;
+    **ptr2+=**ptr1;
+}
+void main(){
+    int var1=5, var2=10;
+    int *ptr1=&var1,*ptr2=&var2;
+    rer(&ptr1,&ptr2);
+    printf("%d %d",var2,var1);
+}
+A
+60,70
+B
+50,50
+C
+50,60
+D
+60,50
+
+Q.32 Consider the following recursive C function that takes two arguments(ISRO 2020)
+ unsigned int rer(unsigned int n, unsigned int r){
+    if(n>0)return(n%r + rer(n/r,r));
+    else retturn 0;
+}
+What is the return value of the function rer when it is called as rer(513,2)?
+A 9
+B 8
+C 5
+D 2
+
+Q.33
+ int tob(int b,int *arr){
+int i;
+for(i=0;b>0;i++){
+if(b%2){
+arr[i]=1;
+else
+{arr[i]=0;}
+}
+int pp(int a,int b){
+int arr[20];
+int i,tot=1,ex,len;
+ex=a;
+len=tob(b,arr);
+for(i=0;i<len;i++){
+if(arr[i]==1)
+tot=tot*ex;
+ex=ex*ex;
+}
+return(tot);
+}
+The value returned by pp(3,4) will be.(GATE 2020)
+
+Q.34 Consider the following C functions.(GATE 2020)
+   int fun1(int n){
+   static int i=0;
+   if(n>0){
+   ++i;
+fun1(n-1);
+}
+return(i);
+}
+int fun2(int n){
+static int i=0;
+if(n>0){
+i=i+fun1(n);
+fun2(n-1);}
+return(i);
+}
+The return value of fun2(5) is ______.
+
+Q.35 Consider the following C program:(GATE 2019)
+
+#include < stdio.h >
+int r(){
+ int static num=7;
+ return num--;
+}
+int main() {
+ for(r();r();r()) {
+  printf("%d ",r());
+  };
+ return 0;
+}
+Which one of the following values will be displayed on execution of the programs?
+A 41
+B 52
+C 63
+D 630
+
+Q.36 Consider the following C program:(GATE 2019)
+
+void convert(int n) {
+  if (n<0)
+    printf("%d",n);
+  else {
+    convert(n/2);
+    printf("%d",n%2);
+  }
+}
+Which one of the following will happen when the function convert is called with any positive integer n as argument?
+A It will print the binary representation of n and terminate.
+B It will print the binary representation of n in the reverse order and terminate.
+C It will print the binary representation of n but will not terminate.
+D It will not print anything and will not terminate.
+
+Q.37 Consider the following C program:(GATE 2019)
+ 
+#include 
+  int jumble(int x, int y) {
+    x = 2 * x + y;
+    return x;
+  }
+int main() {
+  int x = 2, y = 5;
+  y = jumble(y, x);
+  x = jumble(y, x);
+  printf("%dn", x);
+  return 0;
+}
+The value printed by program is __________ .
+
+Q.38 Consider the following C code segment:(ISRO 2019)
+ int f(int x)
+{
+    if(x<1) return 1;
+    else return (f(x-1) + g(x));
+}
+int g(int x)
+{
+    if(x<2) return 2;
+    else return (f(x-1) + g(x/2));
+}
+Of the following, which best describes the growth of f(x) as a function of x ?
+A Linear
+B Exponential
+C Quadratic
+D Cubic
+
+Q.39 Consider the following C++ program:(ISRO 2018)
+ int a (int m)
+{return ++m;}
+int b(int&m)
+{return ++m;}
+int{char &m}
+{return ++m;}
+void main()
+{             
+       int p = 0, q=0, r = 0;
+       p += a(b(p)) ;
+       q+= b(a(q);)
+       r+=a(c(r));
+       cout << p << q << r;
+}
+Assuming the required header first are already included, the above program
+A results in compilation error
+B print 123
+C print 111
+D print 322
+
+Q.40 A language with string manipulation facilities uses the following operations.(ISRO 2018)
+
+head(s)- returns the first character of the string s
+tails(s)- returns all but the first character of the string s
+concat(s1,s2)- concatenates string s1 with s2.
+
+The output of concat(head(s), head(tail(tail(s)))), where s is acbc is:
+A ab
+B ba
+C ac
+D aa
+
+Q.41 Consider the following program written in pseudo-code. Assume that x and y are integers.
+
+Count(x,y) {
+     if (y != 1){
+        if (x != 1) {
+                  print("*");
+                  Count(x/2, y);
+                  }
+            else {
+                     y = y-1;
+                    Count(1024, y);
+                  }
+      }
+} 
+The number of times that the print statement is executed by the call Count(1024,1024) is _____.(GATE 2018)
+
+Q.42 Consider the following C program:(GATE 2018)
+
+#include < stdio.h >
+void fun1(char *s1, char *s2){
+char *tmp;
+tmp = s1;
+s1 = s2;
+s2 = tmp;
+}
+void fun2(char **s1, char **s2){
+char *tmp;
+tmp = *s1;
+*s1 = *s2;
+*s2 = tmp;
+}
+int main(){
+char *str1 = "Hi", *str2 = "Bye";
+fun1(str1, str2); 
+printf("%s %s ", str1, str2); 
+fun2(&str1, &str2); 
+printf("%s %s", str1, str2);
+return 0;
+}
+The output of the program above is
+A Hi Bye Bye Hi
+B Hi Bye Hi Bye
+C Bye Hi Hi Bye
+D Bye Hi Bye Hi
+
+Q.43 Consider the following C program:
+  #include < stdio.h >
+int counter = 0;
+int calc (int a, int b) {
+    int c;
+    counter++;
+    if (b==3) return (a*a*a);
+    else {
+       c = calc(a, b/3);
+       return (c*c*c);
+           }
+}
+int main (){
+calc(4, 81);
+printf ("%d", counter);
+}
+The output of this program is _____.(GATE 2018)
+
+Q.44 What is the output of the following program?(ISRO 2017)
+ #include < stdio.h >
+int tmp=20;
+main()
+{
+  printf("%d", tmp);
+  func();
+  printf("%d", tmp);
+
+}
+func()
+{
+ static int tmp=10;
+ printf("%d", tmp);
+}
+A 20 10 10
+B 20 10 20
+C 20 20 20
+D 10 10 10
+
+Q.45 What does the following C-statement declare?(ISRO 2017)
+ int (*f) (int * );
+A A function that takes an integer pointer as argument and returns an integer
+B A function that takes an integer as argument and returns an integer pointer
+C A pointer to a function that takes an integer pointer as argument and returns an integer
+D A function that takes an integer pointer as argument and returns a function pointer
+
+Q.46 Consider the following function(ISRO 2017)
+ void swap(int a, int b)  
+{       
+    int temp;
+    temp = a;
+    a = b;
+    b = temp;  
+}  
+In order to exchange the values of two variables x and y.
+A call swap(x,y)
+B call swap(&x,&y)
+C swap(x,y) cannot be used as it does not return any value
+D swap(x,y) cannot be used as the parameters are passed by value 
+
+Q.47 What is the output of the C++ program?(ISRO 2017)
+ #include < iostream >
+using namespace std;
+
+void square(int *x){
+    *x = (*x)++ * (*x);
+}
+
+void square(int *x, int *y){
+    *x = (*x) * --(*y);
+}
+
+int main()
+{
+  int number = 30;
+  square(&number, &number);
+  cout < < number;
+  return 0;
+}
+A 910
+B 920
+C 870
+D 900
+
+Q.48 The output of executing the following C program is ________.(GATE 2017)
+ # include 
+int total (int v) {
+while (v) {
+    static int count + = v & 1;
+    v>> = 1;
+ }
+    return count;
+ }
+void main ( ) {
+static int x = 0;
+int i = 5;
+for (; i> 0; i--) {
+x=x + total (i) ; 
+}
+printf ("%d\n", x) ; } 
+
+Q.49 Consider the C functions foo and bar given below:(GATE 2017)
+int foo (int val ) {
+    int x = 0;
+    while (val > 0) {
+    x = x + foo(val--);
+}
+   return val ;
+}
+int bar (int val ) {
+int x = 0;
+while (val > 0) {
+    x = x + bar(val-1);}
+    return val ;
+}
+Invocations of foo(3) and bar(3) will result in:
+A Return of 6 and 6 respectively.
+B Infinite loop and abnormal termination respectively.
+C Abnormal termination and infinite loop respectively.
+D Both terminating abnormally
+
+Q.50 Consider thefollowingprogram:
+
+int f(int*p, int n)
+{
+   if (n<=1)return0;
+    else returnmax(f(p+1,n-1),p[0]-p[1]);
+}
+int main()
+{
+    int a[]={3,5,2,6,4};
+    printf("%d", f(a,5));
+ }
+Note: max(x,y) returns the maxi mumof x and y. The value printed by this program is____________ .(GATE 2016)
